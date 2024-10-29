@@ -44,7 +44,7 @@ void calendario(int dia, int mes, int ano)
         TamanhoDoMes[1] = 29;
     }
 
-    for (int j = 1; j < diaSemana(dia, mes, ano); j++)
+    for (int j = 1; j < diaSemana(1, mes, ano); j++)
         cout << '\t';
 
     for (int dia = 1; dia <= TamanhoDoMes[mes - 1]; dia++)
@@ -52,6 +52,11 @@ void calendario(int dia, int mes, int ano)
 
         if (dia < 10)
             cout << '0' << dia << '\t';
+        else
+            cout << dia << '\t';
+
+        if (diaSemana(dia, mes, ano) == 7)
+            cout << '\n';
     }
 }
 
